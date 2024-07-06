@@ -1,0 +1,368 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>EnchantIndia Tours
+    </title>
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="{% static 'css/style-starter.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main_styles.css' %}">
+    <link href="//fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  
+    <title>Home</title>
+    <style>
+      .testimonial {
+        border: 2px solid #ccc;
+        background-color: #eee;
+        border-radius: 5px;
+        padding: 16px;
+        margin: 16px 0
+      }
+      
+      .testimonial::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      
+      .testimonial img {
+        float: left;
+        margin-right: 20px;
+        border-radius: 50%;
+      }
+      
+      .testimonial span {
+        font-size: 20px;
+        margin-right: 15px;
+      }
+      
+      @media (max-width: 500px) {
+        .testimonial {
+            text-align: center;
+        }
+        .testimonial img {
+            margin: auto;
+            float: none;
+            display: block;
+        }
+      }
+      </style>
+  </head>
+  <body id="home">
+<section class=" w3l-header-4 header-sticky">
+	<!--header-->
+	<header id="site-header" class="fixed-top">
+		<div class="container">
+			<nav class="navbar navbar-expand-lg navbar-dark stroke">
+				<button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+					<span class="navbar-toggler-icon fa icon-close fa-times"></span>
+					
+				</button>
+	  
+				<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+					<ul class="navbar-nav ml-lg-5">
+						<li class="nav-item active">
+							<a class="nav-link" href="{% url 'userHome' %}">HOME <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item @@services__active">
+							<a class="nav-link" href="{% url 'user_packages' %}">PACKAGES</a>
+						</li>
+						<li class="nav-item @@contact__active">
+							<a class="nav-link" href="{% url 'user_about' %}">ABOUT</a>
+						</li>
+						
+<!-- dropdown -->
+            <div class="dropdown">
+              <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img class="" width="30px" src="../../static/images/prof.png" alt="Profile image"> </a>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div class="dropdown-header text-center">
+                  <p class="mb-1 mt-3 font-weight-semibold">{{ User.username }}</p>
+                  <p class="font-weight-light text-muted mb-0">{{ User.email }}</p>
+                </div>
+                <a class="dropdown-item" href="{% url 'edit_userprofile' %}">YOUR PROFILE <span class="badge badge-pill badge-danger"></span><i
+                    class="dropdown-item-icon ti-dashboard"></i></a>
+
+                <a href="{% url 'userviewbookings' %}" class="dropdown-item">ORDER SUMMARY</a>
+
+                <a href="{% url 'Logout' %}" class="dropdown-item">LOGOUT<i class="dropdown-item-icon ti-power-off"></i></a>
+              </div>
+            </div>
+<!-- dropdown -->              
+            </div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	  </header>
+	<!--/header-->
+</section>
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script> <!-- Common jquery plugin -->
+<!--bootstrap working-->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+{% block content %}
+
+<div class="alert alert-info alert-dismissible fade show mb-0" role="alert">
+  <strong>Hello dear customer!</strong>Embark on a journey through india, where the mountains whisper secrets and the forests sing tales of ancient beauty.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div id="carouselExampleIndicators" class="carousel slide mb-5" data-ride="carousel">
+<ol class="carousel-indicators">
+<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+<li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+</ol>
+<div class="carousel-inner">
+<div class="carousel-item active">
+  <img src="/static/images/55.jpeg" class="d-block w-100" style="width:600px;height:610px;" alt="...">
+  <div class="container">
+    <div class="carousel-caption pb-5 mb-5 text-left">
+      <h2 class="display-4 text-light">Welcome To  EnchantIndia Tours</h2>
+      <p class="lead text-light">
+        Embark on a journey through India, where the mountains whisper secrets and the forests sing tales of ancient beauty.
+      </p>
+     
+    </div>
+  </div>
+</div>
+<div class="carousel-item">
+  <img src="/static/images/tag.jpg" class="d-block w-100" style="width:600px;height:610px;" alt="...">
+  <div class="container">
+    <div class="carousel-caption pb-5 mb-5 text-left">
+     
+     
+    </div>
+  </div>
+</div>
+<div class="carousel-item">
+  <img src="/static/images/22.webp" class="d-block w-100" style="width:600px;height:610px;" alt="...">
+  <div class="container">
+    <div class="carousel-caption pb-5 mb-5 text-left">
+      
+    </div>
+  </div>
+</div>
+<div class="carousel-item">
+  <img src="/static/images/33.jpg" class="d-block w-100" style="width:600px;height:610px;" alt="...">
+  <div class="container">
+    <div class="carousel-caption pb-5 mb-5 text-left">
+     
+      
+    </div>
+  </div>
+</div>
+<div class="carousel-item">
+  <img src="/static/images/44.jpg" class="d-block w-100" style="width:600px;height:610px;" alt="...">
+  <div class="container">
+    <div class="carousel-caption pb-5 mb-5 text-left">
+      
+      
+    
+    </div>
+  </div>
+</div>
+</div>
+<div class="container">
+<div class="row py-5 text-center">
+  <div class="col-lg-12 col-md-12">
+    <h3>India</h3>
+    <p class="lead mt-2">Traveling in India is an immersive experience, where ancient traditions coexist with bustling modernity. From the iconic Taj Mahal to the tranquil beaches of Goa, India offers diverse landscapes and cultural treasures. Its vibrant cities, such as Delhi and Jaipur, boast rich histories reflected in their majestic forts and vibrant markets. Exploring India means encountering a kaleidoscope of flavors, sights, and sounds that leave a lasting impression on every traveler.    </p>
+  </div>
+</div>
+</div>
+<button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="sr-only">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="sr-only">Next</span>
+</button>
+</div>
+<!-- Optional JavaScript; choose one of the two! -->
+<section id="info" class="py-5">
+<div class="container">
+<div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-6 justify-content-center text-left infoS">
+    <h3 >Book Your trip Now</h3>
+    <p class="lead">
+      At EnchantIndia Tours, we're committed to providing you with an exceptional experience, and we look forward to welcoming you soon. Your comfort and satisfaction are our top priorities, so please feel free to reach out to us with any inquiries or special requests. We can't wait to make your stay memorable.
+    </p>
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-6 align-self-center">
+    <img src="/static/images/gif2.gif" class="img-fluid">
+  </div>
+</div>
+</div>
+</section>
+<div class="container">
+<div class="image">
+<img src="/static/images/ww8.jpg" style="width:600px;height:350px;float:left;margin-right:10px">
+</div>
+<div class="text">
+<p vertical-align:"top">
+  <h1>The Moments</h1>
+  <p>Traveling through India is a kaleidoscope of unforgettable moments. From the bustling markets of Jaipur where vibrant textiles and aromatic spices fill the air, to the serene sunrise boat rides on the Ganges River in Varanasi, every experience offers a unique glimpse into the country’s rich cultural tapestry. Exploring the ancient temples of Hampi or the intricately carved caves of Ajanta and Ellora transports you back in time, revealing India’s architectural marvels and spiritual heritage. Sampling street food delights in Delhi or Mumbai, from savory chaats to sweet jalebis, provides a taste of India’s diverse culinary traditions. Interacting with locals in rural villages or bustling cities offers insights into everyday life and heartfelt hospitality, leaving travelers with lasting memories of warmth and connection.
+  </p>
+</div>
+</div>
+<div class="container">
+<div class="image">
+<img src="/static/images/ww9.jpg" style="width:600px;height:350px;float:right;">
+</div>
+<div class="text">
+<p vertical-align:"top">
+  <h1>Inclusions</h1>
+  <ul>
+    <li>Includes breakfast, lunch and dinner at a pre-designated venue</li>
+    <li>Upgrade to the next category of trip</li>
+    <li>15% discount on all trip services</li>
+    <li>Welcome immunity drink on arrival</li>
+    <li>Special turndown amenity once during the stay</li><br><br><br><br><br><br><br>
+
+  </ul>
+</p>
+</div>
+</div>
+
+<section id="gallery" class="py-5" uk-lightbox>
+<div class="container">
+<div class="row text-center">
+  <div class="col">
+    <h2 class="mb-0">Photo Gallery</h2>
+    <p class="lead m-0">Click to check out our photos</p>
+  </div>
+</div>
+<div class="row mt-3">
+  <div class="col-lg-4 col-md-4 col-sm-4">
+    <a href="/static/images/vaa.jpg">
+      <img src="/static/images/vaa.jpg" class="img-fluid">
+    </a>
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-4">
+    <a href="/static/images/bm.avif">
+      <img src="/static/images/bm.avif" class="img-fluid">
+    </a>
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-4">
+    <a href="/static/images/nor1.jpg">
+      <img src="/static/images/nor1.jpg" class="img-fluid">
+    </a>
+  </div>
+</div>
+<div class="row mt-3">
+  <div class="col-lg-4 col-md-4 col-sm-4">
+    <a href="/static/images/444.jpg">
+      <img src="/static/images/444.jpg" class="img-fluid">
+    </a>
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-4">
+    <a href="/static/images/222.webp">
+      <img src="/static/images/222.webp" class="img-fluid">
+    </a>
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-4">
+    <a href="/static/images/ww6.webp">
+      <img src="/static/images/ww6.webp" class="img-fluid">
+    </a>
+  </div>
+</div>
+<div class="row mt-3">
+  <div class="col-lg-4 col-md-4 col-sm-4">
+    <a href="/static/images/ww0.jpg">
+      <img src="/static/images/ww0.jpg" class="img-fluid">
+    </a>
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-4">
+    <a href="/static/images/see.webp">
+      <img src="/static/images/see.webp" class="img-fluid">
+    </a>
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-4">
+    <a href="/static/images/ww9.jpg">
+      <img src="/static/images/ww9.jpg" class="img-fluid">
+    </a>
+  </div>
+</div>
+</div>
+</section>
+<br/>
+<center><h2>Testimonials</h2></center>
+<marquee>
+<div class="testimonial">
+<img src="/static/images/8.jpg" alt="Avatar" style="width:90px">
+<p><span>Chris Fox.</span> UK</p>
+<p>Good place, nice ambience, in the vicinity of some quiet and beautiful spots of India.<br>Decent views.Less Tariff. Food was awesome.</p>
+</div>
+<div class="testimonial">
+<img src="/static/images/9.jpg" alt="Avatar" style="width:90px">
+<p><span>Rebecca Flex.</span> Barcelona</p>
+<p>One of the best trip guides i have see at in terms of Locations, Service and stay.</p>
+</div>
+<div class="testimonial">
+<img src="/static/images/10.jpg" alt="Avatar" style="width:90px">
+<p><span>Marie Li</span>  South Korea</p>
+<p>The best place I have visited in India,Great place and great people managing it.</p>
+</div>
+<div class="testimonial">
+<img src="/static/images/11.jpg" alt="Avatar" style="width:90px">
+<p><span>Ananth V. K.</span> Bangaluru, Karnataka</p>
+<p>I went there on family holiday. Enjoyed our trip there,<br>food was awesome. It was a wonderful experience.</p>
+</div>
+</marquee>
+</div>
+
+
+
+
+<div class="testimonial text-center">
+  <section class="w3l-footer-29-main">
+    <div class="footer-29 py-5 ">
+          <div class="footer-list-29 footer-1">
+  <h2 class="footer-title-29 text-light">CONNECT WITH US</h2>
+  <p><span>The vivek, Wayanad</span> © The vivek wayanad 2022. All Rights Reserved.</p>
+  <div class="footer-list-29 footer-1">
+    <ul>
+      <li><p><span class="fa fa-map-marker"></span>10/12 BH ROAD<br>
+        WAYANAD, KERALA</p></li>
+      <li><a href="tel:+91-954-475-5482"><span class="fa fa-phone"></span> +91 9544725482</a></li>
+      <li><a href="" class="mail"><span class="fa fa-envelope-open-o"></span> vibu@gmail.com</a></li>
+    </ul>
+  </div>
+</div>
+</div>
+<div class="footer-list-29 footer-3"></div>
+<div class="footer-list-29 footer-3"></div>
+<div class="footer-list-29 footer-3">
+</div>
+</div>
+</section>
+
+
+{% endblock %}
+
+
+</body>
+
+</html>
